@@ -1,0 +1,10 @@
+@"
+*.o
+*.out
+*.tmp
+a.out
+mysh
+*.exe
+.vscode/
+__pycache__/
+"@ | Out-File -Encoding utf8 .gitignore

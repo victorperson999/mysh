@@ -1,0 +1,14 @@
+gcc -g -Wall -Wextra -Werror -fsanitize=address,leak,object-size,bounds-strict,undefined -fsanitize-address-use-after-scope -c mysh.c 
+gcc -g -Wall -Wextra -Werror -fsanitize=address,leak,object-size,bounds-strict,undefined -fsanitize-address-use-after-scope -c builtins.c 
+gcc -g -Wall -Wextra -Werror -fsanitize=address,leak,object-size,bounds-strict,undefined -fsanitize-address-use-after-scope -c commands.c 
+gcc -g -Wall -Wextra -Werror -fsanitize=address,leak,object-size,bounds-strict,undefined -fsanitize-address-use-after-scope -c variables.c 
+variables.c: In function ‘vars_destroy’:
+variables.c:91:20: error: comparison of integer expressions of different signedness: ‘int’ and ‘size_t’ {aka ‘long unsigned int’} [-Werror=sign-compare]
+   91 |     for (int i=0; i<t->len; i++){
+      |                    ^
+variables.c: In function ‘vars_get’:
+variables.c:105:19: error: comparison of integer expressions of different signedness: ‘int’ and ‘size_t’ {aka ‘long unsigned int’} [-Werror=sign-compare]
+  105 |     for(int i=0; i<t->len; i++){
+      |                   ^
+cc1: all warnings being treated as errors
+make: *** [Makefile:9: variables.o] Error 1

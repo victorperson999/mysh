@@ -1,0 +1,10 @@
+Test List:
+-Server can be correctly launched and shutdown  
+-Server can still execute commands while running a server
+-One Server and one client: Can exhange message
+-One server and two clients: Can exhange message 
+-One server and many clients: Can exhange messages 
+-A server attempts to launch a socket on occupied place 
+
+Hidden tests:
+-Make system calls like bind/select/socket fail artifically, and verify they fail gracefully
