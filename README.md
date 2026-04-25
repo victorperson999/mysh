@@ -1,6 +1,6 @@
 # mysh — A Unix Shell in C
 
-A feature-rich Unix shell implementation written in C as part of CSC209 (Software Tools and Systems Programming) at the University of Toronto. **mysh** supports core shell functionality including built-in commands, program execution with pipelines, background process management, signal handling, and a networked chat system over TCP sockets.
+A feature-rich Unix shell implementation written in C as part of CSC209 (Software Tools and Systems Programming) at the University of Toronto. **mysh** supports substantial shell functionality including built-in commands, program execution with pipelines, background process management, signal handling, and a networked chat system.
 
 ---
 
