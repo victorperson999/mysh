@@ -74,7 +74,7 @@ gcc -Wall -Werror -std=c99 -o mysh mysh.c -lm
 
 ### Run with AddressSanitizer (for development)
 ```bash
-gcc -Wall -Werror -std=c99 -fsanitize=address,undefined -g -o mysh mysh.c -lm
+gcc -Wall -Werror -std=c99 -fsanitize=address undefined -g -o mysh mysh.c -lm
 ./mysh
 ```
 
@@ -120,16 +120,11 @@ mysh/
 
 ---
 
-## Technical Highlights
-
-- **~2,000+ lines of C** spanning systems programming fundamentals: process control, IPC, file descriptors, and network programming.
-- **Zero memory leaks** verified under AddressSanitizer across all milestone test suites.
-- Passed **all automated test suites** across five progressive milestones.
-- Designed with defense-in-depth: every `fork()`, `pipe()`, `dup2()`, `exec()`, `bind()`, `listen()`, `accept()`, and `select()` call includes error checking and clean failure paths.
+- Designed every `fork()`, `pipe()`, `dup2()`, `exec()`, `bind()`, `listen()`, `accept()`, and `select()` call includes error checking and clean failure paths.
 
 ---
 
-## Technologies
+## Misc
 
 - **Language:** C
 - **System APIs:** POSIX (`fork`, `exec`, `pipe`, `dup2`, `waitpid`, `signal`, `select`, `socket`, `bind`, `listen`, `accept`, `connect`)
