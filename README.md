@@ -45,7 +45,7 @@ A feature-rich Unix shell implementation written in C as part of CSC209 (Softwar
 |---|---|
 | **Server as a forked child with pipe-based readiness signaling** | The shell forks a child to run the server, which writes to a pipe once `bind()`/`listen()` succeed. The parent blocks on the pipe read, guaranteeing the server is ready before the client attempts to connect. |
 | **Client loop in the shell process** | Running the client in the same process as the shell avoids stdin-sharing races that occur when two forked processes both try to read from the terminal. |
-| **`_exit(0)` in child processes** | Child processes call `_exit()` instead of `exit()` to skip `atexit` handlers and bypass AddressSanitizer leak-checking overhead in forked children, avoiding false positives and unnecessary cleanup. |
+| **`_exit(0)` in child processes** | Child processes call `_exit()` instead of `exit()` to skip at exit handlers and bypass AddressSanitizer leak-checking overhead in forked children, avoiding false positives and unnecessary cleanup. |
 | **Async-signal-safe signal handlers** | Signal handlers avoid calling non-reentrant functions (e.g., `printf`, `malloc`), using only `write()` and `waitpid()` with `WNOHANG` to safely reap children. |
 
 ---
